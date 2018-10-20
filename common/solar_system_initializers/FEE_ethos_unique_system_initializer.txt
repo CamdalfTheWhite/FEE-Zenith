@@ -350,7 +350,7 @@ FEE_fallen_tomb = {
 			}
 			random_tile = {
 				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-				set_building = "building_capital_2"
+				set_building = "building_fe_admin"
 				set_deposit = d_rich_food_mineral_deposit
 				create_pop = {
 					species = owner_main_species
@@ -368,7 +368,7 @@ FEE_fallen_tomb = {
 			}
 			random_tile = {
 				limit = { has_building = no has_blocker = no }
-				set_building = "building_visitor_center"
+				set_building = "building_fe_fortress"
 				create_pop = {
 					species = owner_main_species
 					ethos = owner
@@ -378,7 +378,7 @@ FEE_fallen_tomb = {
 				count = 6
 				random_tile = {
 					limit = { has_building = no has_blocker = no }
-					set_building = "building_biolab_4"
+					set_building = "building_ancient_archives"
 					set_deposit = d_vast_society_deposit
 					create_pop = {
 						species = owner_main_species
@@ -585,7 +585,7 @@ FEE_fallen_manufactory = {
 
 			random_tile = {
 				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-				set_building = "building_capital_2"
+				set_building = "building_fe_admin"
 				set_deposit = d_rich_food_mineral_deposit
 				create_pop = {
 					species = owner_main_species
@@ -620,7 +620,7 @@ FEE_fallen_manufactory = {
 				count = 4
 				random_tile = {
 					limit = { has_building = no has_blocker = no }
-					set_building = "building_fortress"
+					set_building = "building_fe_fortress"
 					clear_deposits = yes
 					create_pop = {
 						species = owner_main_species
@@ -827,7 +827,7 @@ FEE_fallen_obelisk = {
 
 				random_tile = {
 					limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-					set_building = "building_capital_2"
+					set_building = "building_fe_admin"
 					set_deposit = d_rich_food_mineral_deposit
 					create_pop = {
 						species = owner_main_species
@@ -857,7 +857,7 @@ FEE_fallen_obelisk = {
 					count = 5
 					random_tile = {
 						limit = { has_building = no has_blocker = no }
-						set_building = "building_fortress"
+						set_building = "building_fe_fortress"
 						clear_deposits = yes
 						create_pop = {
 							species = last_created_species
@@ -875,25 +875,25 @@ FEE_fallen_obelisk = {
 					name = "NAME_Guardians_of_Zanaam"
 					owner = ROOT
 					species = last_created_species
-					type = "gene_warrior_army"
+					type = "fe_disciple_army"
 				}
 				create_army = {
 					name = "NAME_Defenders_of_Zanaam"
 					owner = ROOT
 					species = last_created_species
-					type = "gene_warrior_army"
+					type = "fe_disciple_army"
 				}
 				create_army = {
 					name = "NAME_Protectors_of_Zanaam"
 					owner = ROOT
 					species = last_created_species
-					type = "gene_warrior_army"
+					type = "fe_disciple_army"
 				}
 				create_army = {
 					name = "NAME_Bulwark_of_Zanaam"
 					owner = ROOT
 					species = last_created_species
-					type = "gene_warrior_army"
+					type = "fe_disciple_army"
 				}
 			}
 		}
