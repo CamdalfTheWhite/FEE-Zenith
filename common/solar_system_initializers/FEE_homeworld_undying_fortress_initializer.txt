@@ -84,7 +84,7 @@ FEE_fallen_militarist = {
 			}
 			random_tile = {
 				limit = { has_building = no has_blocker = no }
-				set_building = "building_planetary_shield_generator"
+				set_building = "building_fe_shield_generator"
 				create_pop = {
 					species = owner_main_species
 					ethos = owner
@@ -92,7 +92,7 @@ FEE_fallen_militarist = {
 			}
 			random_tile = {
 				limit = { has_building = no has_blocker = no }
-				set_building = "building_military_academy"
+				set_building = "building_fe_military_academy"
 				create_pop = {
 					species = owner_main_species
 					ethos = owner
