@@ -71,7 +71,7 @@ FEE_fallen_6 = {
 			
 			random_tile = {
 				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-				set_building = "building_capital_3"
+				set_building = "building_fe_capital"
 				set_deposit = d_rich_food_mineral_deposit
 				create_pop = {
 					species = owner_main_species
@@ -118,7 +118,7 @@ FEE_fallen_6 = {
 				count = 4
 				random_tile = {
 					limit = { has_building = no has_blocker = no }
-					set_building = "building_fortress"
+					set_building = "building_fe_fortress"
 					clear_deposits = yes
 					create_pop = {
 						species = owner_main_species
@@ -132,7 +132,7 @@ FEE_fallen_6 = {
 					name = random
 					owner = ROOT
 					species = ROOT
-					type = "psionic_army"
+					type = "fe_disciple_army"
 				}
 			}
 			create_fleet = {
@@ -229,7 +229,7 @@ FEE_fallen_6 = {
 
 				random_tile = {
 					limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-					set_building = "building_capital_2"
+					set_building = "building_fe_admin"
 					set_deposit = d_rich_food_mineral_deposit
 					create_pop = {
 						species = owner_main_species
@@ -273,7 +273,7 @@ FEE_fallen_6 = {
 					count = 3
 					random_tile = {
 						limit = { has_building = no has_blocker = no }
-						set_building = "building_fortress"
+						set_building = "building_fe_fortress"
 						clear_deposits = yes
 						create_pop = {
 							species = owner_main_species
@@ -373,7 +373,7 @@ FEE_fallen_6 = {
 
 				random_tile = {
 					limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-					set_building = "building_capital_2"
+					set_building = "building_fe_admin"
 					set_deposit = d_rich_food_mineral_deposit
 					create_pop = {
 						species = owner_main_species
