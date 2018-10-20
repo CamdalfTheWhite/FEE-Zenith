@@ -84,7 +84,7 @@ FEE_fallen_earth = {
 
 			random_tile = {
 				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-				set_building = "building_capital_2"
+				set_building = "building_fe_admin"
 				set_deposit = d_rich_food_mineral_deposit
 			}
 			random_tile = {
@@ -94,13 +94,13 @@ FEE_fallen_earth = {
 			}
 			random_tile = {
 				limit = { has_building = no has_blocker = no }
-				set_building = "building_visitor_center"
+				set_building = "building_fe_clone_vats"
 			}
 			while = {
 				count = 3
 				random_tile = {
 					limit = { has_building = no has_blocker = no }
-					set_building = "building_fortress"
+					set_building = "building_fe_fortress"
 					clear_deposits = yes
 				}
 			}
@@ -255,7 +255,7 @@ FEE_fallen_earth = {
 
 			random_tile = {
 				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-				set_building = "building_capital_3"
+				set_building = "building_fe_capital"
 				set_deposit = d_rich_food_mineral_deposit
 			}
 			random_tile = {
@@ -263,7 +263,7 @@ FEE_fallen_earth = {
 					has_building = no
 					has_blocker = no
 				}
-				set_building = "building_visitor_center"
+				set_building = "building_fe_replicator"
 			}
 			random_tile = {
 				limit = { has_building = no has_blocker = no }
@@ -279,7 +279,7 @@ FEE_fallen_earth = {
 				count = 4
 				random_tile = {
 					limit = { has_building = no has_blocker = no }
-					set_building = "building_fortress"
+					set_building = "zotfe_building_giga_fortress"
 					clear_deposits = yes
 				}
 			}
@@ -415,37 +415,37 @@ FEE_fallen_earth = {
 				name = "NAME_1st_Coalition_Guard"
 				owner = last_created_country
 				species = owner_main_species
-				type = "clone_army"
+				type = "fe_sniper_army"
 			}
 			create_army = {
 				name = "NAME_2nd_Coalition_Guard"
 				owner = last_created_country
 				species = owner_main_species
-				type = "clone_army"
+				type = "fe_sniper_army"
 			}
 			create_army = {
 				name = "NAME_3rd_Coalition_Guard"
 				owner = last_created_country
 				species = owner_main_species
-				type = "clone_army"
+				type = "fe_sniper_army"
 			}
 			create_army = {
 				name = "NAME_4th_Coalition_Guard"
 				owner = last_created_country
 				species = owner_main_species
-				type = "clone_army"
+				type = "fe_sniper_army"
 			}
 			create_army = {
 				name = "NAME_5th_Coalition_Guard"
 				owner = last_created_country
 				species = owner_main_species
-				type = "clone_army"
+				type = "fe_sniper_army"
 			}
 			create_army = {
 				name = "NAME_XCOM"
 				owner = last_created_country
 				species = owner_main_species
-				type = "gene_warrior_army"
+				type = "fe_sniper_army"
 			}
 			create_fleet = {
 				effect = {
@@ -530,7 +530,7 @@ FEE_fallen_earth = {
 
 			random_tile = {
 				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-				set_building = "building_capital_2"
+				set_building = "building_fe_admin"
 				set_deposit = d_rich_food_mineral_deposit
 			}
 			random_tile = {
@@ -543,13 +543,13 @@ FEE_fallen_earth = {
 					has_building = no
 					has_blocker = no
 				}
-				set_building = "building_visitor_center"
+				set_building = "building_fe_hospital"
 			}
 			while = {
 				count = 3
 				random_tile = {
 					limit = { has_building = no has_blocker = no }
-					set_building = "building_fortress"
+					set_building = "building_fe_fortress"
 					clear_deposits = yes
 				}
 			}
@@ -761,7 +761,7 @@ FEE_fallen_earth = {
 
 				random_tile = {
 					limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-					set_building = "building_capital_2"
+					set_building = "building_fe_admin"
 					set_deposit = d_rich_food_mineral_deposit
 					create_pop = {
 						species = owner_main_species
@@ -783,7 +783,7 @@ FEE_fallen_earth = {
 						has_blocker = no
 
 					}
-					set_building = "building_visitor_center"
+					set_building = "building_fe_clone_vats"
 					create_pop = {
 							species = owner_main_species
 							ethos = random
@@ -799,7 +799,7 @@ FEE_fallen_earth = {
 					count = 2
 					random_tile = {
 						limit = { has_building = no has_blocker = no }
-						set_building = "building_fortress"
+						set_building = "building_fe_fortress"
 						clear_deposits = yes
 					}
 				}
@@ -913,7 +913,7 @@ FEE_fallen_earth = {
 
 				random_tile = {
 					limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-					set_building = "building_capital_2"
+					set_building = "building_fe_admin"
 					set_deposit = d_rich_food_mineral_deposit
 				}
 				random_tile = {
@@ -926,11 +926,11 @@ FEE_fallen_earth = {
 						has_building = no
 						has_blocker = no
 					}
-					set_building = "building_visitor_center"
+					set_building = "building_fe_military_academy"
 				}
 				random_tile = {
 					limit = { has_building = no has_blocker = no }
-					set_building = "building_fortress"
+					set_building = "building_fe_fortress"
 				}
 				random_tile = {
 					limit = { has_building = no has_blocker = no }
