@@ -1,0 +1,300 @@
+#--
+#--		--------------------------- --------------------------- --------------------------- ---------------------------
+#--		Fallen Empire Expanded - System Initializer for "Apostolic Basilica" - Ascended Spiritualist FE
+#--		--------------------------- --------------------------- --------------------------- ---------------------------
+#--
+#--		PREFACE
+#--		�	This file allows the generation of homeworld systems, supplementing existing templates of fallen empires systems.
+#--		�	Homeworlds are the capital systems of fallen empires.
+#--		�	This file generates its specified homeworld, as mentioned in the title.
+#--
+#--		--------------------------- --------------------------- --------------------------- ---------------------------
+#--
+
+FEE_fallen_ascended_spiritualist = {
+	usage = fallen_empire_init
+	name = "NAME_Apostolic_Basilica"
+	class = "rl_standard_stars"
+	
+	flags = { FEE_apostolic_basilica }
+	
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 190
+	}
+	
+	planet = {
+		name = "NAME_Divine_Conduit"
+		class = pc_g_star
+		orbit_distance = 0
+		size = 30
+		has_ring = no
+		
+		init_effect = {
+			set_planet_flag = FEE_homeword_apostolic_basilica_star_flag
+			#save_global_event_target_as = FEE_homeword_apostolic_basilica_star_target
+		}
+	}
+	
+	change_orbit = 120
+	
+	planet = {
+		name = "NAME_Temple_of_the_One"
+		class = pc_gaia
+		orbit_distance = { min = 12 max = 18 }
+		orbit_angle = { min = 0 max = 135 }
+		size = 25
+		tile_blockers = none # add loads?
+		init_effect = {
+			prevent_anomaly = yes
+			add_modifier = {
+				modifier = "holy_planet"
+				days = -1
+			}
+			random_tile = {
+				limit = { is_orbital_tile = yes }
+				clear_deposits = yes
+			}
+		}
+		
+		moon = {
+			class = FEE_pc_orbital_ring
+			starting_planet = yes		
+			orbit_distance = 0
+			size = 25
+			has_ring = no
+			
+			init_effect = {
+				change_pc = FEE_pc_orbital_ring
+				set_name = "NAME_High_Altar"
+				set_planet_entity = {
+					entity = "orbital_ring_entity"
+					graphical_culture = "fallen_empire_01"
+				}
+				
+				set_planet_flag = FEE_homeworld_apostolic_basilica_capital_flag
+				#save_global_event_target_as = FEE_homeworld_apostolic_basilica_capital_target
+				
+				create_cluster = {
+					id = fe2_cluster
+					radius = 100
+					center = this.solar_system
+				}
+				
+				set_planet_flag = fallen_empire_world
+				prevent_anomaly = yes
+				set_controller = ROOT
+				set_owner = ROOT
+				set_capital = yes
+			
+				random_tile = {
+					limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
+					set_building = "building_capital_3"
+					set_deposit = d_energy_deposit
+					create_pop = {
+						species = owner_main_species
+						ethos = owner
+					}
+				}
+				while = {
+					count = 2
+					random_tile = {
+						limit = { has_building = no has_blocker = no }
+						set_building = "building_agri_processing_complex"
+						set_deposit = d_farmland_deposit
+						create_pop = {
+							species = owner_main_species
+							ethos = owner
+						}
+					}
+				}
+				while = {
+					count = 11
+					random_tile = {
+						limit = { has_building = no has_blocker = no }
+						set_building = "building_dark_matter_power_plant"
+						set_deposit = d_energy_deposit
+						create_pop = {
+							species = owner_main_species
+							ethos = owner
+						}
+					}
+				}
+				while = {
+					count = 7
+					random_tile = {
+						limit = { has_building = no has_blocker = no }
+						set_building = "building_ancient_factory"
+						set_deposit = d_mineral_deposit
+						create_pop = {
+							species = owner_main_species
+							ethos = owner
+						}
+					}
+				}
+				while = {
+					count = 4
+					random_tile = {
+						limit = { has_building = no has_blocker = no }
+						set_building = "building_fortress"
+						clear_deposits = yes
+						create_pop = {
+							species = owner_main_species
+							ethos = owner
+						}
+					}
+				}
+				while = {
+					count = 15
+					create_army = {
+						name = random
+						owner = ROOT
+						species = ROOT
+						type = "psionic_army"
+					}
+				}
+				create_fallen_empire_starting_navy = yes
+			}
+		}
+	}
+	
+	change_orbit = 120
+	
+	planet = {
+		name = "NAME_Sainted_Sacellum"
+		class = pc_gaia
+		orbit_distance = { min = 12 max = 18 }
+		orbit_angle = { min = 180 max = 315 }
+		size = 25
+		tile_blockers = none # add loads?
+		init_effect = {
+			prevent_anomaly = yes
+			add_modifier = {
+				modifier = "holy_planet"
+				days = -1
+			}
+			random_tile = {
+				limit = { is_orbital_tile = yes }
+				clear_deposits = yes
+			}
+		}
+		
+		moon = {
+			class = FEE_pc_orbital_ring		
+			orbit_distance = 0
+			size = 25
+			has_ring = no
+			
+			init_effect = {
+				change_pc = FEE_pc_orbital_ring
+				set_name = "NAME_Silent_Cloisters"
+				set_planet_entity = {
+					entity = "orbital_ring_entity"
+					graphical_culture = "fallen_empire_01"
+				}
+				set_planet_flag = FEE_homeworld_apostolic_basilica_beta_flag
+				save_global_event_target_as = FEE_homeworld_apostolic_basilica_beta_target
+				
+				set_planet_flag = fallen_empire_world
+				prevent_anomaly = yes
+				set_owner = ROOT
+				set_controller = ROOT
+				
+				while = {
+					count = 11
+					random_tile = {
+						limit = { has_building = no has_blocker = no }
+						set_building = "building_dark_matter_power_plant"
+						set_deposit = d_energy_deposit
+						create_pop = {
+							species = owner_main_species
+							ethos = owner
+						}
+					}
+				}
+				while = {
+					count = 2
+					random_tile = {
+						limit = { has_building = no has_blocker = no }
+						set_building = "building_agri_processing_complex"
+						set_deposit = d_farmland_deposit
+						create_pop = {
+							species = owner_main_species
+							ethos = owner
+						}
+					}
+				}
+				while = {
+					count = 7
+					random_tile = {
+						limit = { has_building = no has_blocker = no }
+						set_building = "building_ancient_factory"
+						set_deposit = d_mineral_deposit
+						create_pop = {
+							species = owner_main_species
+							ethos = owner
+						}
+					}
+				}
+				while = {
+					count = 4
+					random_tile = {
+						limit = { has_building = no has_blocker = no }
+						set_building = "building_fortress"
+						clear_deposits = yes
+						create_pop = {
+							species = owner_main_species
+							ethos = owner
+						}
+					}
+				}
+				while = {
+					count = 15
+					create_army = {
+						name = random
+						owner = ROOT
+						species = ROOT
+						type = "psionic_army"
+					}
+				}
+			}
+		}
+	}
+	
+	neighbor_system = {
+		distance = { min = 0 max = 100 }
+		initializer = "FEE_fallen_obelisk"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_orbitals_1"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_orbitals_2"
+	}
+	neighbor_system = {
+		distance = { min = 30 max = 100 }
+		initializer = "fallen_holy_01"
+	}
+	neighbor_system = {
+		distance = { min = 50 max = 150 }
+		initializer = "fallen_holy_02"
+	}
+	neighbor_system = {
+		distance = { min = 80 max = 200 }
+		initializer = "fallen_holy_03"
+	}
+	neighbor_system = {
+		distance = { min = 120 max = 250 }
+		initializer = "fallen_holy_04"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 30 }
+		initializer = "fallen_shrouded"
+	}
+	
+	init_effect = {
+		create_fe_home_citadel = yes
+	}
+}

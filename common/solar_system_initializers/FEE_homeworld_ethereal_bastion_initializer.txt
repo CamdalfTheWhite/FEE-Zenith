@@ -1,0 +1,623 @@
+#--
+#--		--------------------------- --------------------------- --------------------------- ---------------------------
+#--		Fallen Empire Expanded - System Initializer for "Ethereal Bastion" - Xenophile FE
+#--		--------------------------- --------------------------- --------------------------- ---------------------------
+#--
+#--		PREFACE
+#--		�	This file allows the generation of homeworld systems, supplementing existing templates of fallen empires systems.
+#--		�	Homeworlds are the capital systems of fallen empires.
+#--		�	This file generates its specified homeworld, as mentioned in the title.
+#--
+#--		--------------------------- --------------------------- --------------------------- ---------------------------
+#--
+
+#	--------------------------- --------------------------- --------------------------- ---------------------------
+#	"Ethereal Bastion" - Xenophile FE
+#	--------------------------- --------------------------- --------------------------- ---------------------------
+
+FEE_fallen_7 = {
+	usage = fallen_empire_init
+	name = "NAME_Ethereal_Bastion"
+	class = sc_b
+
+	flags = { FEE_ethereal_bastion }
+	
+	planet = { # Star entity for starbase placement
+		count = 1
+		class = pc_neutron_star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 14
+		has_ring = no
+	}
+
+	change_orbit = 45
+
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "NAME_Ethereal_Bastion"
+		orbit_angle = 30
+		orbit_distance = 0
+		tile_blockers = none
+		modifiers = none
+
+		init_effect = {
+			set_planet_flag = FEE_homeworld_ethereal_bastion_capital_flag
+			save_global_event_target_as = FEE_homeworld_ethereal_bastion_capital_target
+
+			create_cluster = {
+				id = fe3_cluster
+				radius = 100
+				center = this.solar_system
+			}
+
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = ROOT
+			set_controller = ROOT
+			set_capital = yes
+			random_tile = {
+				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_3"
+				set_deposit = d_rich_food_mineral_deposit
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_visitor_center"
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+			}
+			while = {
+				count = 2
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_agri_processing_complex"
+					set_deposit = d_farmland_deposit
+					create_pop = {
+						species = owner_main_species
+						ethos = owner
+					}
+				}
+			}
+			while = {
+				count = 10
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_dark_matter_power_plant"
+					set_deposit = d_energy_deposit
+					create_pop = {
+						species = owner_main_species
+						ethos = owner
+					}
+				}
+			}
+			while = {
+				count = 7
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_ancient_factory"
+					set_deposit = d_mineral_deposit
+					create_pop = {
+						species = owner_main_species
+						ethos = owner
+					}
+				}
+			}
+			while = {
+				count = 4
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_fortress"
+					clear_deposits = yes
+					create_pop = {
+						species = owner_main_species
+						ethos = owner
+					}
+				}
+			}
+			while = {
+				count = 15
+				create_army = {
+					name = random
+					owner = ROOT
+					species = ROOT
+					type = "psionic_army"
+				}
+			}
+			create_fallen_empire_starting_navy = yes
+		}
+	}
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "NAME_Ring_Section_B"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		name = "NAME_Ring_Section_C"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "NAME_Commerce_Ward"
+		orbit_angle = 30
+		orbit_distance = 0
+		tile_blockers = none
+		modifiers = none
+
+		init_effect = {
+			set_planet_flag = FEE_homeworld_ethereal_bastion_commerce_flag
+			save_global_event_target_as = FEE_homeworld_ethereal_bastion_commerce_target
+
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = ROOT
+			set_controller = ROOT
+			random_tile = {
+				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_2"
+				set_deposit = d_rich_food_mineral_deposit
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_visitor_center"
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_agri_processing_complex"
+				set_deposit = d_farmland_deposit
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+			}
+			while = {
+				count = 17
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_dark_matter_power_plant"
+					set_deposit = d_energy_deposit
+					create_pop = {
+						species = owner_main_species
+						ethos = owner
+					}
+				}
+			}
+			while = {
+				count = 5
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_fortress"
+					clear_deposits = yes
+					create_pop = {
+						species = owner_main_species
+						ethos = owner
+					}
+				}
+			}
+		}
+	}
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "NAME_Ring_Section_E"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		name = "NAME_Ring_Section_F"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "NAME_Manufactory_Ward"
+		orbit_angle = 30
+		orbit_distance = 0
+		tile_blockers = none
+		modifiers = none
+
+		init_effect = {
+			set_planet_flag = FEE_homeworld_ethereal_bastion_manufactory_flag
+			save_global_event_target_as = FEE_homeworld_ethereal_bastion_manufactory_target
+
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = ROOT
+			set_controller = ROOT
+			random_tile = {
+				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_2"
+				set_deposit = d_rich_food_mineral_deposit
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_visitor_center"
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_agri_processing_complex"
+				set_deposit = d_farmland_deposit
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+			}
+			while = {
+				count = 17
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_ancient_factory"
+					set_deposit = d_energy_deposit
+					create_pop = {
+						species = owner_main_species
+						ethos = owner
+					}
+				}
+			}
+			while = {
+				count = 5
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_fortress"
+					clear_deposits = yes
+					create_pop = {
+						species = owner_main_species
+						ethos = owner
+					}
+				}
+			}
+		}
+	}
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "NAME_Ring_Section_H"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		name = "NAME_Ring_Section_I"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "NAME_Conservatory_Ward"
+		orbit_angle = 30
+		orbit_distance = 0
+		tile_blockers = none
+		modifiers = none
+
+		init_effect = {
+			set_planet_flag = FEE_homeworld_ethereal_bastion_conservatory_flag
+			save_global_event_target_as = FEE_homeworld_ethereal_bastion_conservatory_target
+
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = ROOT
+			set_controller = ROOT
+
+			set_planet_flag = fe_the_preserve
+
+			random_tile = {
+				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_2"
+				set_deposit = d_rich_food_mineral_deposit
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+			}
+			random_tile = {
+				limit = {
+					has_building = no
+					has_blocker = no
+				}
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+				set_building = "building_visitor_center"
+			}
+			while = {
+				count = 4
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_fortress"
+					clear_deposits = yes
+					create_pop = {
+						species = owner_main_species
+						ethos = owner
+					}
+				}
+			}
+			create_species = {
+				name = random
+				class = random
+				portrait = random
+				traits = random
+			}
+			random_tile = {
+				limit = { has_building = no has_pop = no has_blocker = no }
+				create_pop = {
+					species = last_created_species
+					ethos = random
+				}
+				set_building = "building_fe_xeno_zoo"
+			}
+			create_species = {
+				name = random
+				class = random
+				portrait = random
+				traits = random
+			}
+			random_tile = {
+				limit = { has_building = no has_pop = no has_blocker = no }
+				create_pop = {
+					species = last_created_species
+					ethos = random
+				}
+				set_building = "building_fe_xeno_zoo"
+			}
+			create_species = {
+				name = random
+				class = random
+				portrait = random
+				traits = random
+			}
+			random_tile = {
+				limit = { has_building = no has_pop = no has_blocker = no }
+				create_pop = {
+					species = last_created_species
+					ethos = random
+				}
+				set_building = "building_fe_xeno_zoo"
+			}
+			create_species = {
+				name = random
+				class = random
+				portrait = random
+				traits = random
+			}
+			random_tile = {
+				limit = { has_building = no has_pop = no has_blocker = no }
+				create_pop = {
+					species = last_created_species
+					ethos = random
+				}
+				set_building = "building_fe_xeno_zoo"
+			}
+			create_species = {
+				name = random
+				class = random
+				portrait = random
+				traits = random
+			}
+			random_tile = {
+				limit = { has_building = no has_pop = no has_blocker = no }
+				create_pop = {
+					species = last_created_species
+					ethos = random
+				}
+				set_building = "building_fe_xeno_zoo"
+			}
+			create_species = {
+				name = random
+				class = random
+				portrait = random
+				traits = random
+			}
+			random_tile = {
+				limit = { has_building = no has_pop = no has_blocker = no }
+				create_pop = {
+					species = last_created_species
+					ethos = random
+				}
+				set_building = "building_fe_xeno_zoo"
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no has_pop = no }
+				set_blocker = tb_ancient_ruins
+			}
+			every_tile = {
+				limit = { has_building = no has_blocker = no has_pop = no }
+				set_blocker = tb_xeno_preserve
+			}
+			
+		}
+	}
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "NAME_Ring_Section_K"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		name = "NAME_Ring_Section_L"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+
+	change_orbit = 90
+
+	planet = {
+		count = 1
+		class = star
+		name = "NAME_Mother"
+		orbit_distance = 0
+		orbit_angle = { min = 1 max = 360 }
+		size = 30
+		has_ring = no
+
+		change_orbit = 18
+
+		moon = {
+			name = "NAME_Mother_I"
+			class = pc_molten
+			orbit_distance = { min = 10 max = 15 }
+			orbit_angle = 35
+			size = { min = 8 max = 12 }
+		}
+
+		moon = {
+			name = "NAME_Mother_II"
+			class = pc_toxic
+			orbit_distance = { min = 10 max = 15 }
+			orbit_angle = 70
+			size = { min = 10 max = 16 }
+		}
+
+		moon = {
+			name = "NAME_Mother_III"
+			class = pc_barren
+			orbit_distance = { min = 10 max = 15 }
+			orbit_angle = 140
+			size = { min = 10 max = 16 }
+		}
+
+	}
+
+	change_orbit = 80
+
+	planet = {
+		count = 1
+		class = star
+		name = "NAME_Father"
+		orbit_distance = 0
+		orbit_angle = 180
+		size = 12
+
+		change_orbit = 20
+
+		moon = {
+			name = "NAME_Father_I"
+			class = pc_barren
+			orbit_distance = { min = 15 max = 20 }
+			orbit_angle = 30
+			size = { min = 8 max = 12 }
+		}
+
+		moon = {
+			name = "NAME_Father_II"
+			class = pc_gas_giant
+			orbit_distance = { min = 15 max = 20 }
+			orbit_angle = 60
+			size = 25
+		}
+
+	}
+
+	change_orbit = 100
+
+	planet = {
+		count = 12
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 1 max = 3 }
+	}
+	init_effect = {
+		create_fe_home_citadel = yes
+		random_system_planet = {
+			limit = { has_deposit_for = shipclass_mining_station }
+			create_mining_station = {
+				owner = ROOT
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_fallen_empire_platform = yes
+					set_location = {
+						target = PREV
+						distance = 20
+						angle = 90
+					}
+				}
+			}
+		}
+		random_system_planet = {
+			limit = {
+				has_deposit_for = shipclass_mining_station
+				has_mining_station = no
+			}
+			create_mining_station = {
+				owner = ROOT
+			}
+		}
+		random_system_planet = {
+			limit = { has_deposit_for = shipclass_research_station }
+			create_research_station = {
+				owner = ROOT
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_fallen_empire_platform = yes
+					set_location = {
+						target = PREV
+						distance = 20
+						angle = 90
+					}
+				}
+			}
+		}
+		random_system_planet = {
+			limit = {
+				has_deposit_for = shipclass_research_station
+				has_research_station = no
+			}
+			create_research_station = {
+				owner = ROOT
+			}
+		}
+		random_system_planet = {
+			limit = {
+				has_research_station = no
+				has_mining_station = no
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_fallen_empire_platform = yes
+					set_location = PREV
+				}
+			}
+		}
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 100 }
+		initializer = "FEE_fallen_col_5"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 200 }
+		initializer = "FEE_fallen_tomb"
+	}
+}
+
+
