@@ -133,10 +133,22 @@ FEE_fallen_ascended_spiritualist = {
 					}
 				}
 				while = {
-					count = 4
+					count = 1
 					random_tile = {
 						limit = { has_building = no has_blocker = no }
 						set_building = "zotfe_building_giga_fortress"
+						clear_deposits = yes
+						create_pop = {
+							species = owner_main_species
+							ethos = owner
+						}
+					}
+				}
+				while = {
+					count = 3
+					random_tile = {
+						limit = { has_building = no has_blocker = no }
+						set_building = "building_fe_fortress"
 						clear_deposits = yes
 						create_pop = {
 							species = owner_main_species
