@@ -73,9 +73,9 @@ FEE_fallen_terran_wasteland = {
 		class = "pc_desert"
 		orbit_distance = 24
 		orbit_angle = 125
-		size = 16
+		deposit_blockers = none
+		size = 20
 		has_ring = no
-		tile_blockers = none
 		modifiers = none
 
 		init_effect = {
@@ -90,49 +90,40 @@ FEE_fallen_terran_wasteland = {
 			add_modifier = {
 				modifier = "ancient_forgeworld"
 				days = -1
-			}
-
-			random_tile = {
-				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-				set_building = "building_fe_admin"
-				set_deposit = d_mineral_deposit
-				set_deposit = d_farmland_deposit
-				create_pop = {
-					species = owner_main_species
-					ethos = owner
-				}
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no }
-				set_building = "building_agri_processing_complex"
-				set_deposit = d_farmland_deposit
-				create_pop = {
-					species = owner_main_species
-					ethos = owner
-				}
+			}			
+			
+			add_building = building_ancient_palace
+			add_building = building_fe_stronghold
+			add_building = building_fe_stronghold
+			add_building = building_affluence_center
+			add_building = building_affluence_center
+			add_building = building_affluence_center
+			add_building = building_nourishment_center
+			add_building = building_nourishment_center
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity				
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			while = {
+				count = 20
+				add_district = district_city
 			}
 			while = {
-				count = 8
-				random_tile = {
-					limit = { has_building = no has_blocker = no }
-					set_building = "building_ancient_factory"
-					set_deposit = d_mineral_deposit
-					create_pop = {
-						species = owner_main_species
-						ethos = owner
-					}
+				count = 62
+				create_pop = {
+					species = owner_main_species
 				}
 			}
+			while = { create_fee_servant_species = yes }
+			last_created_species = { save_event_target_as = fe_servants }
 			while = {
-				count = 4
-				random_tile = {
-					limit = { has_building = no has_blocker = no }
-					set_building = "building_fe_fortress"
-					clear_deposits = yes
-					create_pop = {
-						species = owner_main_species
-						ethos = owner
-					}
+				count = 62
+				create_pop = {
+					species = event_target:fe_servants
 				}
 			}
 			create_fleet = {
@@ -190,114 +181,12 @@ FEE_fallen_terran_wasteland = {
 		orbit_angle = 120
 		size = 25
 		has_ring = no
-		tile_blockers = none
+		deposit_blockers = none
 		anomaly = "sol_wasteland_category"
 
 		init_effect = {
 			set_planet_flag = FEE_homeworld_terran_wasteland_earth_flag
 			save_global_event_target_as = FEE_homeworld_terran_wasteland_earth_target
-
-			random_tile = {
-				limit = { has_building = no has_blocker = no }
-				set_building = "building_particle_accelerator"
-				set_deposit = d_immense_physics_deposit
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no }
-				set_building = "building_vault"
-				set_deposit = d_immense_society_deposit
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no }
-				set_building = "building_vault"
-				set_deposit = d_immense_society_deposit
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no }
-				set_building = "building_vault"
-				set_deposit = d_immense_society_deposit
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no }
-				set_building = "building_odd_factory"
-				set_deposit = d_rich_mineral_deposit
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_bomb_crater
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_bomb_crater
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_bomb_crater
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_city_ruins
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_city_ruins
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_city_ruins
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_city_ruins
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_city_ruins
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_city_ruins
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_city_ruins
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_city_ruins
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_city_ruins
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_city_ruins
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_radioactive_wasteland
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_radioactive_wasteland
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_radioactive_wasteland
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_radioactive_wasteland
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_radioactive_wasteland
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no has_pop = no }
-				set_blocker = tb_radioactive_wasteland
-			}
 
 			create_fleet = {
 				effect = {
@@ -345,10 +234,8 @@ FEE_fallen_terran_wasteland = {
 					days = -1
 				}
 
-				orbital_deposit_tile = {
-					clear_deposits = yes
-					set_deposit = d_immense_engineering_deposit
-				}
+				clear_deposits = yes
+				add_deposit = d_engineering_4
 
 				create_ambient_object = {
 					type = "large_debris_object"
@@ -373,9 +260,9 @@ FEE_fallen_terran_wasteland = {
 		class = "pc_gaia"
 		orbit_distance = 36
 		orbit_angle = 60
-		size = 25
+		deposit_blockers = none
+		size = 35
 		has_ring = no
-		tile_blockers = none
 		modifiers = none
 		entity = "savannah_planet_01_entity"
 
@@ -388,62 +275,37 @@ FEE_fallen_terran_wasteland = {
 			set_owner = last_created_country
 			set_controller = last_created_country
 			set_capital = yes
-
-			random_tile = {
-				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-				set_building = "building_fe_capital"
-				set_deposit = d_rich_food_mineral_deposit
+	
+			add_building = building_ancient_palace
+			add_building = building_fe_stronghold
+			add_building = building_fe_stronghold
+			add_building = building_affluence_center
+			add_building = building_affluence_center
+			add_building = building_affluence_center
+			add_building = building_nourishment_center
+			add_building = building_nourishment_center
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			while = {
+				count = 35
+				add_district = district_city
+			}
+			while = {
+				count = 108
 				create_pop = {
 					species = owner_main_species
-					ethos = owner
 				}
 			}
 			while = {
-				count = 2
-				random_tile = {
-					limit = { has_building = no has_blocker = no }
-					set_building = "building_agri_processing_complex"
-					set_deposit = d_rich_farmland_deposit
-					create_pop = {
-						species = owner_main_species
-						ethos = owner
-					}
-				}
-			}
-			while = {
-				count = 11
-				random_tile = {
-					limit = { has_building = no has_blocker = no }
-					set_building = "building_dark_matter_power_plant"
-					set_deposit = d_energy_deposit
-					create_pop = {
-						species = owner_main_species
-						ethos = owner
-					}
-				}
-			}
-			while = {
-				count = 7
-				random_tile = {
-					limit = { has_building = no has_blocker = no }
-					set_building = "building_ancient_factory"
-					set_deposit = d_mineral_deposit
-					create_pop = {
-						species = owner_main_species
-						ethos = owner
-					}
-				}
-			}
-			while = {
-				count = 4
-				random_tile = {
-					limit = { has_building = no has_blocker = no }
-					set_building = "building_fe_fortress"
-					clear_deposits = yes
-					create_pop = {
-						species = owner_main_species
-						ethos = owner
-					}
+				count = 108
+				create_pop = {
+					species = event_target:fe_servants
 				}
 			}
 			while = {
@@ -452,7 +314,7 @@ FEE_fallen_terran_wasteland = {
 					name = random
 					owner = ROOT
 					species = ROOT
-					type = "fe_deathbringer_army"
+					type = "gene_warrior_army"
 				}
 			}
 			create_fleet = {
@@ -573,7 +435,7 @@ FEE_fallen_terran_wasteland = {
 			orbit_distance = 8
 			orbit_angle = 10
 			has_ring = no
-			tile_blockers = none
+			deposit_blockers = none
 			modifiers = none
 
 			init_effect = {
@@ -582,68 +444,6 @@ FEE_fallen_terran_wasteland = {
 
 				prevent_anomaly = yes
 
-				random_tile = {
-					limit = { has_building = no has_blocker = no }
-					set_building = "building_vault"
-					set_deposit = d_immense_society_deposit
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no }
-					set_building = "building_vault"
-					set_deposit = d_immense_society_deposit
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no has_pop = no }
-					set_blocker = tb_bomb_crater
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no has_pop = no }
-					set_blocker = tb_bomb_crater
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no has_pop = no }
-					set_blocker = tb_city_ruins
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no has_pop = no }
-					set_blocker = tb_city_ruins
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no has_pop = no }
-					set_blocker = tb_city_ruins
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no has_pop = no }
-					set_blocker = tb_city_ruins
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no has_pop = no }
-					set_blocker = tb_radioactive_wasteland
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no has_pop = no }
-					set_blocker = tb_radioactive_wasteland
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no has_pop = no }
-					set_blocker = tb_radioactive_wasteland
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no has_pop = no }
-					set_blocker = tb_radioactive_wasteland
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no has_pop = no }
-					set_blocker = tb_radioactive_wasteland
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no has_pop = no }
-					set_blocker = tb_radioactive_wasteland
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no has_pop = no }
-					set_blocker = tb_radioactive_wasteland
-				}
 				create_fleet = {
 					effect = {
 						set_owner = last_created_country
@@ -725,8 +525,8 @@ FEE_fallen_terran_wasteland = {
 			size = 16
 			orbit_distance = 8
 			orbit_angle = 90
+			deposit_blockers = none
 			has_ring = no
-			tile_blockers = none
 			modifiers = none
 
 			init_effect = {
@@ -736,60 +536,38 @@ FEE_fallen_terran_wasteland = {
 				set_planet_flag = fallen_empire_world
 				prevent_anomaly = yes
 				set_owner = last_created_country
-				set_controller = last_created_country
-
-				random_tile = {
-					limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-					set_building = "building_fe_admin"
-					set_deposit = d_rich_food_mineral_deposit
+				set_controller = last_created_country		
+			
+				add_building = building_ancient_palace
+				add_building = building_fe_stronghold
+				add_building = building_fe_stronghold
+				add_building = building_affluence_center
+				add_building = building_affluence_center
+				add_building = building_affluence_center
+				add_building = building_nourishment_center
+				add_building = building_nourishment_center
+				add_building = building_class_4_singularity
+				add_building = building_class_4_singularity				
+				add_building = building_dimensional_fabricator
+				add_building = building_dimensional_fabricator
+				add_building = building_dimensional_fabricator
+				add_building = building_nano_forge
+				add_building = building_nano_forge
+				add_building = building_nano_forge
+				while = {
+					count = 16
+					add_district = district_city
+				}
+				while = {
+					count = 49
 					create_pop = {
 						species = owner_main_species
-						ethos = owner
 					}
 				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no }
-					set_building = "building_agri_processing_complex"
-					set_deposit = d_farmland_deposit
+				while = {
+					count = 49
 					create_pop = {
-						species = owner_main_species
-						ethos = owner
-					}
-				}
-				while = {
-					count = 5
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_dark_matter_power_plant"
-						set_deposit = d_energy_deposit
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
-				}
-				while = {
-					count = 5
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_ancient_factory"
-						set_deposit = d_mineral_deposit
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
-				}
-				while = {
-					count = 4
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_fe_fortress"
-						clear_deposits = yes
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
+						species = event_target:fe_servants
 					}
 				}
 				create_fleet = {
@@ -889,67 +667,45 @@ FEE_fallen_terran_wasteland = {
 			size = 16
 			orbit_distance = 8
 			orbit_angle = 90
+			deposit_blockers = none
 			has_ring = no
-			tile_blockers = none
 			modifiers = none
 
 			init_effect = {
 				set_planet_flag = fallen_empire_world
 				prevent_anomaly = yes
-				set_owner = last_created_country
-
-				random_tile = {
-					limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-					set_building = "building_fe_admin"
-					set_deposit = d_mineral_food_deposit
+				set_owner = last_created_country		
+			
+				add_building = building_ancient_palace
+				add_building = building_fe_stronghold
+				add_building = building_fe_stronghold
+				add_building = building_affluence_center
+				add_building = building_affluence_center
+				add_building = building_affluence_center
+				add_building = building_nourishment_center
+				add_building = building_nourishment_center
+				add_building = building_class_4_singularity
+				add_building = building_class_4_singularity				
+				add_building = building_dimensional_fabricator
+				add_building = building_dimensional_fabricator
+				add_building = building_dimensional_fabricator
+				add_building = building_nano_forge
+				add_building = building_nano_forge
+				add_building = building_nano_forge
+				while = {
+					count = 16
+					add_district = district_city
+				}
+				while = {
+					count = 49
 					create_pop = {
 						species = owner_main_species
-						ethos = owner
 					}
 				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no }
-					set_building = "building_agri_processing_complex"
-					set_deposit = d_farmland_deposit
+				while = {
+					count = 49
 					create_pop = {
-						species = owner_main_species
-						ethos = owner
-					}
-				}
-				while = {
-					count = 5
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_dark_matter_power_plant"
-						set_deposit = d_energy_deposit
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
-				}
-				while = {
-					count = 5
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_ancient_factory"
-						set_deposit = d_mineral_deposit
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
-				}
-				while = {
-					count = 4
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_fe_fortress"
-						clear_deposits = yes
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
+						species = event_target:fe_servants
 					}
 				}
 				create_fleet = {
@@ -1010,10 +766,9 @@ FEE_fallen_terran_wasteland = {
 
 		init_effect = {
 
-			orbital_deposit_tile = {
-				clear_deposits = yes
-				set_deposit = d_lythuric_gas_deposit
-			}
+			clear_deposits = yes
+			add_deposit = d_engineering_4
+
 
 			create_ambient_object = {
 				type = "large_debris_object"
@@ -1057,10 +812,10 @@ FEE_fallen_terran_wasteland = {
 			has_ring = no
 
 			init_effect = {
-				orbital_deposit_tile = {
-					clear_deposits = yes
-					set_deposit = d_immense_mineral_deposit
-				}
+
+				clear_deposits = yes
+				add_deposit = d_engineering_4
+
 				create_ambient_object = {
 					type = "large_debris_object"
 					location = THIS

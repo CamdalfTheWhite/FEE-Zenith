@@ -44,24 +44,21 @@ FEE_fallen_ascended_spiritualist = {
 		orbit_distance = { min = 12 max = 18 }
 		orbit_angle = { min = 0 max = 135 }
 		size = 25
-		tile_blockers = none # add loads?
+		deposit_blockers = none # add loads?
 		init_effect = {
 			prevent_anomaly = yes
 			add_modifier = {
 				modifier = "holy_planet"
 				days = -1
 			}
-			random_tile = {
-				limit = { is_orbital_tile = yes }
-				clear_deposits = yes
-			}
 		}
 		
 		moon = {
 			class = FEE_pc_orbital_ring
-			starting_planet = yes		
+			home_planet = yes		
 			orbit_distance = 0
-			size = 25
+			deposit_blockers = none
+			size = 30
 			has_ring = no
 			
 			init_effect = {
@@ -86,83 +83,48 @@ FEE_fallen_ascended_spiritualist = {
 				set_controller = ROOT
 				set_owner = ROOT
 				set_capital = yes
-			
-				random_tile = {
-					limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-					set_building = "building_fe_capital"
-					set_deposit = d_energy_deposit
+
+				add_building = building_ancient_palace
+				add_building = building_fe_dome
+				add_building = building_fe_dome
+				add_building = building_fe_dome
+				add_building = building_fe_dome
+				add_building = building_fe_dome
+				add_building = building_fe_dome
+				add_building = building_fe_dome
+				add_building = building_fe_stronghold
+				add_building = building_fe_stronghold
+				add_building = building_dimensional_fabricator			
+				add_building = building_class_4_singularity
+				add_building = building_class_4_singularity
+				add_building = building_nano_forge
+				add_building = building_nano_forge	
+				add_building = building_nano_forge
+				while = {
+					count = 14
+					add_district = district_city
+				}
+				while = {
+					count = 8 
+					add_district = district_mining
+				}
+				while = {
+					count = 8
+					add_district = district_farming
+				}
+				while = {
+					count = 134
 					create_pop = {
 						species = owner_main_species
-						ethos = owner
 					}
 				}
 				while = {
-					count = 2
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_agri_processing_complex"
-						set_deposit = d_farmland_deposit
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
-				}
-				while = {
-					count = 11
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_dark_matter_power_plant"
-						set_deposit = d_energy_deposit
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
-				}
-				while = {
-					count = 7
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_ancient_factory"
-						set_deposit = d_mineral_deposit
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
-				}
-				while = {
-					count = 1
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "zotfe_building_giga_fortress"
-						clear_deposits = yes
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
-				}
-				while = {
-					count = 3
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_fe_fortress"
-						clear_deposits = yes
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
-				}
-				while = {
-					count = 20
+					count = 15
 					create_army = {
 						name = random
 						owner = ROOT
 						species = ROOT
-						type = "fe_disciple_army"
+						type = "psionic_army"
 					}
 				}
 				create_fallen_empire_starting_navy = yes
@@ -177,24 +139,22 @@ FEE_fallen_ascended_spiritualist = {
 		class = pc_gaia
 		orbit_distance = { min = 12 max = 18 }
 		orbit_angle = { min = 180 max = 315 }
+		deposit_blockers = none
 		size = 25
-		tile_blockers = none # add loads?
+		deposit_blockers = none # add loads?
 		init_effect = {
 			prevent_anomaly = yes
 			add_modifier = {
 				modifier = "holy_planet"
 				days = -1
 			}
-			random_tile = {
-				limit = { is_orbital_tile = yes }
-				clear_deposits = yes
-			}
 		}
 		
 		moon = {
 			class = FEE_pc_orbital_ring		
 			orbit_distance = 0
-			size = 25
+			size = 22	
+			deposit_blockers = none
 			has_ring = no
 			
 			init_effect = {
@@ -210,61 +170,40 @@ FEE_fallen_ascended_spiritualist = {
 				set_planet_flag = fallen_empire_world
 				prevent_anomaly = yes
 				set_owner = ROOT
-				set_controller = ROOT
-				
-				init_effect = {
-					random_tile = {
-						limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-						set_building = "building_fe_admin"
-						set_deposit = d_energy_deposit
-					}
+				set_controller = ROOT			
+		
+				add_building = building_ancient_palace
+				add_building = building_empyrean_shrine
+				add_building = building_fe_dome
+				add_building = building_fe_dome
+				add_building = building_fe_dome
+				add_building = building_fe_dome
+				add_building = building_fe_dome
+				add_building = building_nano_forge
+				add_building = building_fe_stronghold
+				add_building = building_fe_stronghold
+				add_building = building_class_4_singularity
+				add_building = building_class_4_singularity	
+				add_building = building_nano_forge
+				add_building = building_nano_forge
+				add_building = building_dimensional_fabricator		
+				add_building = building_dimensional_fabricator		
+				while = {
+					count = 12
+					add_district = district_city
 				}
 				while = {
-					count = 10
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_dark_matter_power_plant"
-						set_deposit = d_energy_deposit
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
+					count = 5
+					add_district = district_mining
 				}
 				while = {
-					count = 2
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_agri_processing_complex"
-						set_deposit = d_farmland_deposit
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
-				}
+					count = 5
+					add_district = district_farming
+				}			
 				while = {
-					count = 7
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_ancient_factory"
-						set_deposit = d_mineral_deposit
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
-				}
-				while = {
-					count = 4
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_fe_fortress"
-						clear_deposits = yes
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
+					count = 100
+					create_pop = {
+						species = owner_main_species
 					}
 				}
 				while = {
@@ -273,7 +212,7 @@ FEE_fallen_ascended_spiritualist = {
 						name = random
 						owner = ROOT
 						species = ROOT
-						type = "fe_disciple_army"
+						type = "psionic_army"
 					}
 				}
 			}

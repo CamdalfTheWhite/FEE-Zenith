@@ -100,8 +100,8 @@ FEE_fallen_8 = {
 			class = pc_gaia
 			orbit_distance = 50
 			orbit_angle = { min = 90 max = 270 }
+			deposit_blockers = none
 			size = 25
-			tile_blockers = none
 			modifiers = none
 			has_ring = no
 
@@ -119,79 +119,39 @@ FEE_fallen_8 = {
 				prevent_anomaly = yes
 				set_owner = ROOT
 				set_capital = yes
-
-				random_tile = {
-					limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-					set_building = "building_fe_capital"
-					set_deposit = d_rich_food_mineral_deposit
+	
+				add_building = building_ancient_palace
+				add_building = building_fe_stronghold
+				add_building = building_fe_stronghold
+				add_building = building_affluence_center
+				add_building = building_affluence_center
+				add_building = building_affluence_center
+				add_building = building_nourishment_center
+				add_building = building_nourishment_center
+				add_building = building_class_4_singularity
+				add_building = building_class_4_singularity
+				add_building = building_class_4_singularity
+				add_building = building_dimensional_fabricator
+				add_building = building_dimensional_fabricator
+				add_building = building_nano_forge
+				add_building = building_nano_forge
+				add_building = building_nano_forge
+				while = {
+					count = 25
+					add_district = district_city
+				}
+				while = {
+					count = 62
 					create_pop = {
 						species = owner_main_species
-						ethos = owner
 					}
 				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no }
-					set_building = "building_fe_shield_generator"
+				root = { create_fe_servant_species = yes }
+				last_created_species = { save_event_target_as = fe_servants }
+				while = {
+					count = 62
 					create_pop = {
-						species = owner_main_species
-						ethos = owner
-					}
-				}
-				random_tile = {
-					limit = { has_building = no has_blocker = no }
-					set_building = "building_agri_processing_complex"
-					set_deposit = d_rich_farmland_deposit
-					create_pop = {
-						species = owner_main_species
-						ethos = owner
-					}
-				}
-				while = {
-					count = 16
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_dark_matter_power_plant"
-						set_deposit = d_energy_deposit
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
-				}
-				while = {
-					count = 2
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_ancient_factory"
-						set_deposit = d_mineral_deposit
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
-				}
-				while = {
-					count = 1
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "zotfe_building_giga_fortress"
-						clear_deposits = yes
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
-					}
-				}
-				while = {
-					count = 3
-					random_tile = {
-						limit = { has_building = no has_blocker = no }
-						set_building = "building_fe_fortress"
-						clear_deposits = yes
-						create_pop = {
-							species = owner_main_species
-							ethos = owner
-						}
+						species = event_target:fe_servants
 					}
 				}
 				while = {
@@ -200,7 +160,7 @@ FEE_fallen_8 = {
 						name = random
 						owner = ROOT
 						species = ROOT
-						type = "fe_deathbringer_army"
+						type = "robotic_army"
 					}
 				}
 				create_fleet = {
@@ -260,8 +220,8 @@ FEE_fallen_8 = {
 		class = ideal_planet_class
 		orbit_distance = 40
 		orbit_angle = 120
+		deposit_blockers = none
 		size = 25
-		tile_blockers = none
 		modifiers = none
 		has_ring = no
 
@@ -281,48 +241,36 @@ FEE_fallen_8 = {
 			add_modifier = {
 				modifier = "ultra_rich"
 				days = -1
+			}			
+			
+			add_building = building_ancient_palace
+			add_building = building_fe_stronghold
+			add_building = building_fe_stronghold
+			add_building = building_affluence_center
+			add_building = building_nourishment_center
+			add_building = building_nourishment_center
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity				
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			while = {
+				count = 25
+				add_district = district_city
 			}
-
-			random_tile = {
-				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-				set_building = "building_fe_admin"
-				set_deposit = d_rich_food_mineral_deposit
+			while = {
+				count = 62
 				create_pop = {
 					species = owner_main_species
-					ethos = owner
-				}
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no }
-				set_building = "building_agri_processing_complex"
-				set_deposit = d_rich_farmland_deposit
-				create_pop = {
-					species = owner_main_species
-					ethos = owner
 				}
 			}
 			while = {
-				count = 19
-				random_tile = {
-					limit = { has_building = no has_blocker = no }
-					set_building = "building_ancient_factory"
-					set_deposit = d_mineral_deposit
-					create_pop = {
-						species = owner_main_species
-						ethos = owner
-					}
-				}
-			}
-			while = {
-				count = 4
-				random_tile = {
-					limit = { has_building = no has_blocker = no }
-					set_building = "building_fe_fortress"
-					clear_deposits = yes
-					create_pop = {
-						species = owner_main_species
-						ethos = owner
-					}
+				count = 62
+				create_pop = {
+					species = event_target:fe_servants
 				}
 			}
 			create_fleet = {
